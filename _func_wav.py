@@ -38,6 +38,9 @@ class samplereverpol:
 		self.wav_hz = wavfile.getframerate()
 		self.wav_channels = wavfile.getnchannels()
 		self.wav_sampwidth = wavfile.getsampwidth()
+		if self.wav_sampwidth!=2:
+			print('only 16-bit version is valid')
+			exit()
 		self.wav_data = wavfile.readframes(wavfile.getnframes())
 		self.wav_data = numpy.frombuffer(self.wav_data, numpy.int16 if self.wav_sampwidth==2 else numpy.int8)
 		self.wav_data = self.wav_data.reshape([-1, self.wav_channels])
