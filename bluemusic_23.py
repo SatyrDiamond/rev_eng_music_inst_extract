@@ -3,13 +3,6 @@ from _func_wav import *
 
 def do_blue_23(filename):
 	revpol = samplereverpol('Blue (23).wav', 122)
-	#outdata, outhash = outcomb(revpol)
-
-	#for x, y in outhash.items():
-	#	oy = y[0]
-	#	outfile = 'blue_23/%i_%i.wav' % (oy[0], oy[1])
-	#	data = revpol.get_revpol_fixed(oy[0], oy[1])
-	#	to_wav(outfile, data, revpol)
 
 	inst_slaps = revpol.get_revpol_fixed(11, 15)
 	to_wav('blue_23_inst/inst_slaps.wav', inst_slaps, revpol)
@@ -70,9 +63,5 @@ def do_blue_23(filename):
 	to_wav('blue_23_inst/inst_locrash.wav', inst_locrash, revpol)
 
 
-
 os.makedirs('blue_23_inst', exist_ok=True)
 do_blue_23('Blue (23).wav')
-
-
-#to_wav('outwav.wav', data)
